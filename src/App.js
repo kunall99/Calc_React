@@ -1,25 +1,117 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Input from "./Input";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+class App extends React.Component{
+  
+  state = {
+    Num1 : 0,
+    Num2 : 0,
+    count : 0,
+    currInp : 0,
+    operator : "",
+    output : 0,
+  };
+
+  updateValue1 = (value) => {
+    this.setState({ 
+      Num1 : this.state.currInp,
+      currInp : 0,
+      count : 1,
+    });
+  };
+
+  updateValue2 = (value) => {
+    this.setState({ 
+      Num2 : this.state.currInp,
+      currInp : 0,
+      count : 0,
+    });
+  };
+
+  handleCurrInput = (value) => {
+    this.setState({currInp : value});
+  };
+  
+  render = () => {
+    return(
+      <div>
+        <h1 className = "output">
+          Output : {this.state.output}
+        </h1>
+
+        <div className = "operator">
+          <button
+            className = "addition"
+            onClick={() => {
+              this.setState({operator : "+"});
+            }}
+          > 
+          +</button>
+          <button
+            className = "subtraction"
+            onClick={() => {
+              this.setState({operator : "-"});
+            }}
+          > 
+          -</button>
+          <button
+            className = "divide"
+            onClick={() => {
+              this.setState({operator : "/"});
+            }}
+          > 
+          /</button>
+          <button
+            className = "multiplication"
+            onClick={() => {
+              this.setState({operator : "*"});
+            }}
+          > 
+          *</button>
+          
+        </div>
+        <Input
+          className = "input"
+          handleCurrInput = {this.handleCurrInput} 
+          updateValue1 = {this.updateValue1}
+          updateValue2 = {this.updateValue2}
+          count = {this.state.count}
+          currInp = {this.state.currInp}
+        />
+        <div className="function">
+        <button
+            className = "equals"
+            onClick={() => {
+              if(this.state.operator == "+")
+                this.setState({output:Number(this.state.Num1) + Number(this.state.Num2)});
+              else if(this.state.operator == "-")
+                this.setState({output:Number(this.state.Num1) - Number(this.state.Num2)});
+              else if(this.state.operator == "/")
+                this.setState({output:Number(this.state.Num1) / Number(this.state.Num2)});
+              else
+                this.setState({output:Number(this.state.Num1) * Number(this.state.Num2)});
+            }}
+          > 
+        =</button>
+        <button 
+          className = "reset"
+          onClick={() => {
+            this.setState({
+              Num1 : 0,
+              Num2 : 0,
+              count : 0,
+              currInp : 0,
+              operator : "",
+              output : 0,
+            })
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+        AC</button>
+        </div>
+      </div>
+    );
+  };
+
+};
 
 export default App;

@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    font-style: Nora Sans;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    background-color: #e3e6f4;
+    background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23c9bae1' fill-opacity='0.29'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.input-box {
+    height: 10vh;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    text-align: center;
+    margin-left: 40%;
+    margin-top: 5vh;
+    font-size: 1.5rem;
+}
+
+h1 {
+    height: 10vh;
+    display: flex;
+    margin-top: 15vh;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.output {
+}
+
+.operator {
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+button {
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    width: 75px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    background-color: azure;
+    align-items: center;
+}
+
+.addition {
+}
+
+.subtraction {
+}
+
+.divide {
+}
+
+.multiplication {
+}
+
+.input {
+}
+
+.function {
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.equals {
+}
+
+.reset {
+}
