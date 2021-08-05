@@ -12,7 +12,7 @@ class App extends React.Component{
     output : 0,
   };
 
-  updateValue1 = (value) => {
+  updateValue1 = () => {
     this.setState({ 
       Num1 : this.state.currInp,
       currInp : "",
@@ -20,7 +20,7 @@ class App extends React.Component{
     });
   };
 
-  updateValue2 = (value) => {
+  updateValue2 = () => {
     this.setState({ 
       Num2 : this.state.currInp,
       currInp : "",
@@ -88,7 +88,7 @@ class App extends React.Component{
                 this.setState({output:Number(this.state.Num1) - Number(this.state.Num2)});
               else if(this.state.operator == "/")
                 this.setState({output:Number(this.state.Num1) / Number(this.state.Num2)});
-              else
+              else if(this.state.operator == "*")
                 this.setState({output:Number(this.state.Num1) * Number(this.state.Num2)});
             }}
           > 
