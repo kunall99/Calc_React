@@ -7,7 +7,7 @@ class App extends React.Component{
     Num1 : 0,
     Num2 : 0,
     count : 0,
-    currInp : 0,
+    currInp : "",
     operator : "",
     output : 0,
   };
@@ -15,7 +15,7 @@ class App extends React.Component{
   updateValue1 = (value) => {
     this.setState({ 
       Num1 : this.state.currInp,
-      currInp : 0,
+      currInp : "",
       count : 1,
     });
   };
@@ -23,7 +23,7 @@ class App extends React.Component{
   updateValue2 = (value) => {
     this.setState({ 
       Num2 : this.state.currInp,
-      currInp : 0,
+      currInp : "",
       count : 0,
     });
   };
@@ -100,7 +100,7 @@ class App extends React.Component{
               Num1 : 0,
               Num2 : 0,
               count : 0,
-              currInp : 0,
+              currInp : "",
               operator : "",
               output : 0,
             })
